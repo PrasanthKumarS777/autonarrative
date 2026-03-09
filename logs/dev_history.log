@@ -1,0 +1,815 @@
+Commit 1: Initial project scaffolding and folder structure
+Commit 2: Add requirements.txt with core dependencies
+Commit 3: Configure .gitignore for Python and environment files
+Commit 4: Add data_generator.py base structure
+Commit 5: Implement weekly date range generation logic
+Commit 6: Add base KPI baseline values for NovaTech
+Commit 7: Implement organic revenue growth trend
+Commit 8: Add random noise to revenue for realism
+Commit 9: Implement active users growth simulation
+Commit 10: Add churn rate fluctuation logic
+Commit 11: Implement CAC simulation with variance
+Commit 12: Add conversion rate weekly simulation
+Commit 13: Inject pricing change anomaly at week 20
+Commit 14: Inject marketing campaign failure at week 45
+Commit 15: Inject seasonal holiday drop at week 72
+Commit 16: Inject viral feature launch spike at week 88
+Commit 17: Add max() guard to prevent negative KPI values
+Commit 18: Export generated dataset to CSV in data/raw/
+Commit 19: Add print summary on dataset generation
+Commit 20: Add ingest.py base structure
+Commit 21: Implement logging configuration for pipeline
+Commit 22: Add load_raw_data function with date parsing
+Commit 23: Implement validate_data function
+Commit 24: Add required columns presence check
+Commit 25: Add null value detection across critical columns
+Commit 26: Add revenue negativity validation check
+Commit 27: Add active users positivity check
+Commit 28: Add churn rate range validation 0 to 1
+Commit 29: Add conversion rate range validation 0 to 1
+Commit 30: Implement add_derived_columns function
+Commit 31: Add week over week revenue percentage change
+Commit 32: Add 4 week rolling average for revenue
+Commit 33: Add 4 week rolling average for active users
+Commit 34: Add revenue per user efficiency metric
+Commit 35: Add ingested_at timestamp column
+Commit 36: Implement store_to_sqlite function
+Commit 37: Add SQLite connection and table creation
+Commit 38: Wire run_ingestion master function
+Commit 39: Add detect_anomalies.py base structure
+Commit 40: Suppress Prophet and cmdstanpy verbose logs
+Commit 41: Implement detect_zscore_anomalies function
+Commit 42: Add z-score calculation with configurable threshold
+Commit 43: Implement detect_prophet_anomalies function
+Commit 44: Configure Prophet with yearly seasonality only
+Commit 45: Add confidence interval breach detection logic
+Commit 46: Implement run_anomaly_detection master function
+Commit 47: Add combined OR logic for hybrid detection
+Commit 48: Build anomaly summary dataframe across all KPIs
+Commit 49: Export anomaly_summary.csv to processed folder
+Commit 50: Add narrative_engine.py base structure
+Commit 51: Implement load_data with SQLite and CSV merge
+Commit 52: Add prior 4 week baseline context calculation
+Commit 53: Implement revenue anomaly description builder
+Commit 54: Add active users anomaly description builder
+Commit 55: Add churn rate anomaly description builder
+Commit 56: Implement build_prompt function with full context
+Commit 57: Add OpenAI GPT-3.5-turbo API integration
+Commit 58: Configure max tokens and temperature for narratives
+Commit 59: Add offline placeholder narrative fallback
+Commit 60: Implement run_narrative_engine master function
+Commit 61: Export narratives.csv with all generated reports
+Commit 62: Add report_generator.py base structure
+Commit 63: Implement KPIReport class extending FPDF
+Commit 64: Add custom header with company name and title
+Commit 65: Add custom footer with date and page number
+Commit 66: Implement add_cover_page function
+Commit 67: Add decorative separator line on cover page
+Commit 68: Add system description disclaimer on cover
+Commit 69: Implement add_summary_table function
+Commit 70: Add alternating row colors to summary table
+Commit 71: Add column headers with blue background styling
+Commit 72: Implement add_narrative_pages function
+Commit 73: Add per anomaly KPI metrics display
+Commit 74: Add blue highlighted narrative text box
+Commit 75: Add timestamped PDF output filename
+Commit 76: Implement generate_pdf_report master function
+Commit 77: Add dashboard.py base structure
+Commit 78: Configure Streamlit page title and wide layout
+Commit 79: Implement load_kpi_data from SQLite
+Commit 80: Implement load_narratives from CSV
+Commit 81: Add top level KPI metric cards with WoW delta
+Commit 82: Implement plot_kpi_with_anomalies Plotly function
+Commit 83: Add main KPI trend line to charts
+Commit 84: Add 4 week rolling average reference line
+Commit 85: Add red anomaly marker overlay on charts
+Commit 86: Add revenue and active users chart row
+Commit 87: Add churn rate and CAC chart row
+Commit 88: Implement expandable narrative sections
+Commit 89: Add anomaly flag indicators per narrative
+Commit 90: Add executive narrative info box display
+Commit 91: Add week metrics dataframe per narrative
+Commit 92: Add full dataset table with column config
+Commit 93: Implement main.py master pipeline runner
+Commit 94: Add ordered pipeline steps configuration
+Commit 95: Implement run_step with subprocess execution
+Commit 96: Add pipeline abort on step failure logic
+Commit 97: Add Dockerfile with Python 3.11 slim base
+Commit 98: Configure Docker working directory and ports
+Commit 99: Add .dockerignore for clean image builds
+Commit 100: Fix currency from USD to INR across all files
+Commit 101: Update company name to NovaTech Solutions Pvt Ltd
+Commit 102: Calibrate revenue baseline to Indian SaaS market
+Commit 103: Update CAC to Indian market benchmark INR 8500
+Commit 104: Add comprehensive README with full documentation
+Extra commit 1: Refactor data_generator.py for better readability
+Extra commit 2: Add edge case handling for zero division in metrics
+Extra commit 3: Improve logging messages across all pipeline scripts
+Extra commit 4: Add type hints to ingest.py functions
+Extra commit 5: Optimise SQLite query performance in narrative engine
+Extra commit 6: Add error handling for missing CSV files
+Extra commit 7: Refactor build_prompt for cleaner string formatting
+Extra commit 8: Add unit test structure for data validation
+Extra commit 9: Improve anomaly detection threshold documentation
+Extra commit 10: Add weekly seasonality disable comment in Prophet
+Extra commit 11: Refactor PDF report color scheme for consistency
+Extra commit 12: Improve dashboard metric card formatting
+Extra commit 13: Add hover tooltips to Plotly trend charts
+Extra commit 14: Refactor chart layout for consistent margins
+Extra commit 15: Add pipeline execution time tracking to main.py
+Extra commit 16: Improve README installation instructions
+Extra commit 17: Add Python version badge to README
+Extra commit 18: Add Docker badge to README
+Extra commit 19: Add Streamlit badge to README
+Extra commit 20: Refactor anomaly summary dataframe column naming
+Extra commit 21: Add data freshness check to ingestion layer
+Extra commit 22: Improve PDF cover page typography spacing
+Extra commit 23: Add footer page numbering to all report pages
+Extra commit 24: Refactor narrative engine prompt template
+Extra commit 25: Add offline mode documentation to README
+Extra commit 26: Improve SQLite connection error handling
+Extra commit 27: Add KPI description tooltips to dashboard
+Extra commit 28: Refactor rolling average calculation logic
+Extra commit 29: Add week index column to processed dataset
+Extra commit 30: Improve anomaly flag column naming convention
+Extra commit 31: Add dashboard sidebar with project information
+Extra commit 32: Refactor Streamlit layout for mobile responsiveness
+Extra commit 33: Add INR formatting helper function
+Extra commit 34: Improve churn rate display precision
+Extra commit 35: Add conversion rate chart to dashboard
+Extra commit 36: Refactor report generator page break logic
+Extra commit 37: Add anomaly count badge to dashboard header
+Extra commit 38: Improve Prophet model fit logging
+Extra commit 39: Add Z-score threshold configuration constant
+Extra commit 40: Refactor combined anomaly logic for clarity
+Extra commit 41: Add pipeline step timing to logs
+Extra commit 42: Improve data generator seed documentation
+Extra commit 43: Add business context section to README
+Extra commit 44: Refactor SQLite storage with context manager
+Extra commit 45: Add processed data folder existence check
+Extra commit 46: Improve narrative CSV column documentation
+Extra commit 47: Add sample output section to README
+Extra commit 48: Refactor dashboard chart color palette
+Extra commit 49: Add company name constant to shared config
+Extra commit 50: Improve PDF table cell padding and spacing
+Extra commit 51: Add anomaly week count to dashboard subtitle
+Extra commit 52: Refactor ingest pipeline return value
+Extra commit 53: Add data validation error message improvements
+Extra commit 54: Improve Prophet confidence interval width comment
+Extra commit 55: Add revenue per user chart to dashboard
+Extra commit 56: Refactor narrative expander label formatting
+Extra commit 57: Add pipeline abort message clarity
+Extra commit 58: Improve Docker CMD instruction documentation
+Extra commit 59: Add gitignore entry for pytest cache
+Extra commit 60: Refactor main pipeline step names for clarity
+Extra commit 61: Add project description to GitHub repository
+Extra commit 62: Improve README tech stack table formatting
+Extra commit 63: Add architecture diagram to README
+Extra commit 64: Refactor logging format for timestamp consistency
+Extra commit 65: Add final end to end pipeline validation
+Extra commit 66: Improve README author section with GitHub link
+Extra commit 67: Final code review and cleanup across all files
+dev log entry 1
+dev log entry 2
+dev log entry 3
+dev log entry 4
+dev log entry 5
+dev log entry 6
+dev log entry 7
+dev log entry 8
+dev log entry 9
+dev log entry 10
+dev log entry 11
+dev log entry 12
+dev log entry 13
+dev log entry 14
+dev log entry 15
+dev log entry 16
+dev log entry 17
+dev log entry 18
+dev log entry 19
+dev log entry 20
+dev log entry 21
+dev log entry 22
+dev log entry 23
+dev log entry 24
+dev log entry 25
+dev log entry 26
+dev log entry 27
+dev log entry 28
+dev log entry 29
+dev log entry 30
+dev log entry 31
+dev log entry 32
+dev log entry 33
+dev log entry 34
+dev log entry 35
+dev log entry 36
+dev log entry 37
+dev log entry 38
+dev log entry 39
+dev log entry 40
+dev log entry 41
+dev log entry 42
+dev log entry 43
+dev log entry 44
+dev log entry 45
+dev log entry 46
+dev log entry 47
+dev log entry 48
+dev log entry 49
+dev log entry 50
+dev log entry 51
+dev log entry 52
+dev log entry 53
+dev log entry 54
+dev log entry 55
+dev log entry 56
+dev log entry 57
+dev log entry 58
+dev log entry 59
+dev log entry 60
+dev log entry 61
+dev log entry 62
+dev log entry 63
+dev log entry 64
+dev log entry 65
+dev log entry 66
+dev log entry 67
+dev log entry 68
+dev log entry 69
+dev log entry 70
+dev log entry 71
+dev log entry 72
+dev log entry 73
+dev log entry 74
+dev log entry 75
+dev log entry 76
+dev log entry 77
+dev log entry 78
+dev log entry 79
+dev log entry 80
+dev log entry 81
+dev log entry 82
+dev log entry 83
+dev log entry 84
+dev log entry 85
+dev log entry 86
+dev log entry 87
+dev log entry 88
+dev log entry 89
+dev log entry 90
+dev log entry 91
+dev log entry 92
+dev log entry 93
+dev log entry 94
+dev log entry 95
+dev log entry 96
+dev log entry 97
+dev log entry 98
+dev log entry 99
+dev log entry 100
+dev log entry 101
+dev log entry 102
+dev log entry 103
+dev log entry 104
+dev log entry 105
+dev log entry 106
+dev log entry 107
+dev log entry 108
+dev log entry 109
+dev log entry 110
+dev log entry 111
+dev log entry 112
+dev log entry 113
+dev log entry 114
+dev log entry 115
+dev log entry 116
+dev log entry 117
+dev log entry 118
+dev log entry 119
+dev log entry 120
+dev log entry 121
+dev log entry 122
+dev log entry 123
+dev log entry 124
+dev log entry 125
+dev log entry 126
+dev log entry 127
+dev log entry 128
+dev log entry 129
+dev log entry 130
+dev log entry 131
+dev log entry 132
+dev log entry 133
+dev log entry 134
+dev log entry 135
+dev log entry 136
+dev log entry 137
+dev log entry 138
+dev log entry 139
+dev log entry 140
+dev log entry 141
+dev log entry 142
+dev log entry 143
+dev log entry 144
+dev log entry 145
+dev log entry 146
+dev log entry 147
+dev log entry 148
+dev log entry 149
+dev log entry 150
+dev log entry 151
+dev log entry 152
+dev log entry 153
+dev log entry 154
+dev log entry 155
+dev log entry 156
+dev log entry 157
+dev log entry 158
+dev log entry 159
+dev log entry 160
+dev log entry 161
+dev log entry 1
+dev log entry 2
+dev log entry 3
+dev log entry 4
+dev log entry 5
+dev log entry 6
+dev log entry 7
+dev log entry 8
+dev log entry 9
+dev log entry 10
+dev log entry 11
+dev log entry 12
+dev log entry 13
+dev log entry 14
+dev log entry 15
+dev log entry 16
+dev log entry 17
+dev log entry 18
+dev log entry 19
+dev log entry 20
+dev log entry 21
+dev log entry 22
+dev log entry 23
+dev log entry 24
+dev log entry 25
+dev log entry 26
+dev log entry 27
+dev log entry 28
+dev log entry 29
+dev log entry 30
+dev log entry 31
+dev log entry 32
+dev log entry 33
+dev log entry 34
+dev log entry 35
+dev log entry 36
+dev log entry 37
+dev log entry 38
+dev log entry 39
+dev log entry 40
+dev log entry 41
+dev log entry 42
+dev log entry 43
+dev log entry 44
+dev log entry 45
+dev log entry 46
+dev log entry 47
+dev log entry 48
+dev log entry 49
+dev log entry 50
+dev log entry 51
+dev log entry 52
+dev log entry 53
+dev log entry 54
+dev log entry 55
+dev log entry 56
+dev log entry 57
+dev log entry 58
+dev log entry 59
+dev log entry 60
+dev log entry 61
+dev log entry 62
+dev log entry 63
+dev log entry 64
+dev log entry 65
+dev log entry 66
+dev log entry 67
+dev log entry 68
+dev log entry 69
+dev log entry 70
+dev log entry 71
+dev log entry 72
+dev log entry 73
+dev log entry 74
+dev log entry 75
+dev log entry 76
+dev log entry 77
+dev log entry 78
+dev log entry 79
+dev log entry 80
+dev log entry 81
+dev log entry 82
+dev log entry 83
+dev log entry 84
+dev log entry 85
+dev log entry 86
+dev log entry 87
+dev log entry 88
+dev log entry 89
+dev log entry 90
+dev log entry 91
+dev log entry 92
+dev log entry 93
+dev log entry 94
+dev log entry 95
+dev log entry 96
+dev log entry 97
+dev log entry 98
+dev log entry 99
+dev log entry 100
+dev log entry 101
+dev log entry 102
+dev log entry 103
+dev log entry 104
+dev log entry 105
+dev log entry 106
+dev log entry 107
+dev log entry 108
+dev log entry 109
+dev log entry 110
+dev log entry 111
+dev log entry 112
+dev log entry 113
+dev log entry 114
+dev log entry 115
+dev log entry 116
+dev log entry 117
+dev log entry 118
+dev log entry 119
+dev log entry 120
+dev log entry 121
+dev log entry 122
+dev log entry 123
+dev log entry 124
+dev log entry 125
+dev log entry 126
+dev log entry 127
+dev log entry 128
+dev log entry 129
+dev log entry 130
+dev log entry 131
+dev log entry 132
+dev log entry 133
+dev log entry 134
+dev log entry 135
+dev log entry 136
+dev log entry 137
+dev log entry 138
+dev log entry 139
+dev log entry 140
+dev log entry 141
+dev log entry 142
+dev log entry 143
+dev log entry 144
+dev log entry 145
+dev log entry 146
+dev log entry 147
+dev log entry 148
+dev log entry 149
+dev log entry 150
+dev log entry 151
+dev log entry 152
+dev log entry 153
+dev log entry 154
+dev log entry 155
+dev log entry 156
+dev log entry 157
+dev log entry 158
+dev log entry 159
+dev log entry 160
+dev log entry 161
+dev log entry 1
+dev log entry 2
+dev log entry 3
+dev log entry 4
+dev log entry 5
+dev log entry 6
+dev log entry 7
+dev log entry 8
+dev log entry 9
+dev log entry 10
+dev log entry 11
+dev log entry 12
+dev log entry 13
+dev log entry 14
+dev log entry 15
+dev log entry 16
+dev log entry 17
+dev log entry 18
+dev log entry 19
+dev log entry 20
+dev log entry 21
+dev log entry 22
+dev log entry 23
+dev log entry 24
+dev log entry 25
+dev log entry 26
+dev log entry 27
+dev log entry 28
+dev log entry 29
+dev log entry 30
+dev log entry 31
+dev log entry 32
+dev log entry 33
+dev log entry 34
+dev log entry 35
+dev log entry 36
+dev log entry 37
+dev log entry 38
+dev log entry 39
+dev log entry 40
+dev log entry 41
+dev log entry 42
+dev log entry 43
+dev log entry 44
+dev log entry 45
+dev log entry 46
+dev log entry 47
+dev log entry 48
+dev log entry 49
+dev log entry 50
+dev log entry 51
+dev log entry 52
+dev log entry 53
+dev log entry 54
+dev log entry 55
+dev log entry 56
+dev log entry 57
+dev log entry 58
+dev log entry 59
+dev log entry 60
+dev log entry 61
+dev log entry 62
+dev log entry 63
+dev log entry 64
+dev log entry 65
+dev log entry 66
+dev log entry 67
+dev log entry 68
+dev log entry 69
+dev log entry 70
+dev log entry 71
+dev log entry 72
+dev log entry 73
+dev log entry 74
+dev log entry 75
+dev log entry 76
+dev log entry 77
+dev log entry 78
+dev log entry 79
+dev log entry 80
+dev log entry 81
+dev log entry 82
+dev log entry 83
+dev log entry 84
+dev log entry 85
+dev log entry 86
+dev log entry 87
+dev log entry 88
+dev log entry 89
+dev log entry 90
+dev log entry 91
+dev log entry 92
+dev log entry 93
+dev log entry 94
+dev log entry 95
+dev log entry 96
+dev log entry 97
+dev log entry 98
+dev log entry 99
+dev log entry 100
+dev log entry 101
+dev log entry 102
+dev log entry 103
+dev log entry 104
+dev log entry 105
+dev log entry 106
+dev log entry 107
+dev log entry 108
+dev log entry 109
+dev log entry 110
+dev log entry 111
+dev log entry 112
+dev log entry 113
+dev log entry 114
+dev log entry 115
+dev log entry 116
+dev log entry 117
+dev log entry 118
+dev log entry 119
+dev log entry 120
+dev log entry 121
+dev log entry 122
+dev log entry 123
+dev log entry 124
+dev log entry 125
+dev log entry 126
+dev log entry 127
+dev log entry 128
+dev log entry 129
+dev log entry 130
+dev log entry 131
+dev log entry 132
+dev log entry 133
+dev log entry 134
+dev log entry 135
+dev log entry 136
+dev log entry 137
+dev log entry 138
+dev log entry 139
+dev log entry 140
+dev log entry 141
+dev log entry 142
+dev log entry 143
+dev log entry 144
+dev log entry 145
+dev log entry 146
+dev log entry 147
+dev log entry 148
+dev log entry 149
+dev log entry 150
+dev log entry 151
+dev log entry 152
+dev log entry 153
+dev log entry 154
+dev log entry 155
+dev log entry 156
+dev log entry 157
+dev log entry 158
+dev log entry 159
+dev log entry 160
+dev log entry 161
+dev log entry 1
+dev log entry 2
+dev log entry 3
+dev log entry 4
+dev log entry 5
+dev log entry 6
+dev log entry 7
+dev log entry 8
+dev log entry 9
+dev log entry 10
+dev log entry 11
+dev log entry 12
+dev log entry 13
+dev log entry 14
+dev log entry 15
+dev log entry 16
+dev log entry 17
+dev log entry 18
+dev log entry 19
+dev log entry 20
+dev log entry 21
+dev log entry 22
+dev log entry 23
+dev log entry 24
+dev log entry 25
+dev log entry 26
+dev log entry 27
+dev log entry 28
+dev log entry 29
+dev log entry 30
+dev log entry 31
+dev log entry 32
+dev log entry 33
+dev log entry 34
+dev log entry 35
+dev log entry 36
+dev log entry 37
+dev log entry 38
+dev log entry 39
+dev log entry 40
+dev log entry 41
+dev log entry 42
+dev log entry 43
+dev log entry 44
+dev log entry 45
+dev log entry 46
+dev log entry 47
+dev log entry 48
+dev log entry 49
+dev log entry 50
+dev log entry 51
+dev log entry 52
+dev log entry 53
+dev log entry 54
+dev log entry 55
+dev log entry 56
+dev log entry 57
+dev log entry 58
+dev log entry 59
+dev log entry 60
+dev log entry 61
+dev log entry 62
+dev log entry 63
+dev log entry 64
+dev log entry 65
+dev log entry 66
+dev log entry 67
+dev log entry 68
+dev log entry 69
+dev log entry 70
+dev log entry 71
+dev log entry 72
+dev log entry 73
+dev log entry 74
+dev log entry 75
+dev log entry 76
+dev log entry 77
+dev log entry 78
+dev log entry 79
+dev log entry 80
+dev log entry 81
+dev log entry 82
+dev log entry 83
+dev log entry 84
+dev log entry 85
+dev log entry 86
+dev log entry 87
+dev log entry 88
+dev log entry 89
+dev log entry 90
+dev log entry 91
+dev log entry 92
+dev log entry 93
+dev log entry 94
+dev log entry 95
+dev log entry 96
+dev log entry 97
+dev log entry 98
+dev log entry 99
+dev log entry 100
+dev log entry 101
+dev log entry 102
+dev log entry 103
+dev log entry 104
+dev log entry 105
+dev log entry 106
+dev log entry 107
+dev log entry 108
+dev log entry 109
+dev log entry 110
+dev log entry 111
+dev log entry 112
+dev log entry 113
+dev log entry 114
+dev log entry 115
+dev log entry 116
+dev log entry 117
+dev log entry 118
+dev log entry 119
+dev log entry 120
+dev log entry 121
+dev log entry 122
+dev log entry 123
+dev log entry 124
+dev log entry 125
+dev log entry 126
+dev log entry 127
+dev log entry 128
+dev log entry 129
+dev log entry 130
+dev log entry 131
+dev log entry 132
+dev log entry 133
+dev log entry 134
+dev log entry 135
+dev log entry 136
+dev log entry 137
+dev log entry 138
+dev log entry 139
+dev log entry 140
+dev log entry 141
+dev log entry 142
+dev log entry 143
+dev log entry 144
+dev log entry 145
+dev log entry 146
+dev log entry 147
+dev log entry 148
+dev log entry 149
+dev log entry 150
+dev log entry 151
+dev log entry 152
+dev log entry 153
+dev log entry 154
+dev log entry 155
+dev log entry 156
+dev log entry 157
+dev log entry 158
+dev log entry 159
+dev log entry 160
+dev log entry 161
