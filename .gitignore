@@ -1,0 +1,23 @@
+# Environment
+.env
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Data files
+data/raw/*
+data/processed/*
+
+# Reports output
+reports/*
+
+# Logs
+logs/*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
