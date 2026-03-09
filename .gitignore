@@ -6,11 +6,11 @@ __pycache__/
 *.pyo
 
 # Data files
-data/raw/*
-data/processed/*
+# data/raw/*
+# data/processed/*
 
 # Reports output
-reports/*
+# reports/*
 
 # Logs
 logs/*
